@@ -1,6 +1,7 @@
 #include "item.h"
 
-Item::Item(QObject *parent) : QObject(parent)
+Item::Item(QString title,QPixmap sprite,QObject *parent) : QObject(parent),data(title,sprite)
 {
 
 }
+

@@ -2,12 +2,19 @@
 #define ITEM_H
 
 #include <QObject>
+#include "itemdata.h"
+#include "itemview.h"
 
 class Item : public QObject
 {
     Q_OBJECT
+private:
+    ItemData data;
+    ItemView view;
 public:
-    explicit Item(QObject *parent = 0);
+    Item(QString,QPixmap,QObject *parent = 0);
+    friend class ItemView;
+    friend class InventorySlot;
 
 signals:
 

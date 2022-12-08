@@ -1,24 +1,28 @@
 #include "inventoryview.h"
 
-InventoryView::InventoryView(InventoryData data,QWidget *parent) : QWidget(parent), data(data)
+InventoryView::InventoryView(const InventoryData& data,QWidget *parent) : QWidget(parent), data(data)
 {
-    pAdd = new QPushButton("Добавить итем");
-    pAdd->resize(100,50);
-    pRemove = new QPushButton("Удалить итем");
-
     pHorizontalLayout = new QHBoxLayout();
     pVerticalLayout = new QVBoxLayout();
 
-    buttonSpacer = new QSpacerItem(50,30,QSizePolicy::Expanding);
-    inventoryVerticalSpacer = new QSpacerItem(300,450,QSizePolicy::Expanding);
-
-    pVerticalLayout->addItem(inventoryVerticalSpacer);
-    pVerticalLayout->addLayout(pHorizontalLayout);
-    pHorizontalLayout->addWidget(pAdd);
-    pHorizontalLayout->addWidget(pRemove);
-    pHorizontalLayout->addItem(buttonSpacer);
-
     setLayout(pVerticalLayout);
+}
 
+void InventoryView::initData()
+{
+    for(auto iterator = data.itemsVector.begin(); iterator != data.itemsVector.end();++iterator)
+    {
+        InventorySlot* slot = new InventorySlot((*iterator));
+        pVerticalLayout->addWidget(slot);
+        inventorySlots.push_back(slot);
+    }
+}
+
+void InventoryView::refreshData()
+{
+    auto iterator = data.itemsVector.back();
+    InventorySlot* slot = new InventorySlot((iterator));
+    pVerticalLayout->addWidget(slot,1);
+    inventorySlots.push_back(slot);
 }
 

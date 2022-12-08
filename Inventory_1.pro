@@ -20,7 +20,7 @@ SOURCES += main.cpp\
     inventorydata.cpp \
     inventory.cpp\
     inventoryview.cpp \
-    inventoryslot.cpp
+    inventoryslot.cpp\
 
 HEADERS  += mainwindow.h \
     item.h \
@@ -29,6 +29,6 @@ HEADERS  += mainwindow.h \
     inventorydata.h \
     inventory.h\
     inventoryview.h \
-    inventoryslot.h
+    inventoryslot.h\
 
 FORMS    += mainwindow.ui
