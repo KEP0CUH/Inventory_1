@@ -13,8 +13,22 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    item.cpp \
+    itemdata.cpp \
+    itemview.cpp \
+    inventorydata.cpp \
+    inventory.cpp\
+    inventoryview.cpp \
+    inventoryslot.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    item.h \
+    itemdata.h \
+    itemview.h \
+    inventorydata.h \
+    inventory.h\
+    inventoryview.h \
+    inventoryslot.h
 
 FORMS    += mainwindow.ui
