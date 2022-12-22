@@ -32,3 +32,6 @@ HEADERS  += mainwindow.h \
     inventoryslot.h\
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    resources.qrc
